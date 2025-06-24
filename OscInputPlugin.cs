@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using Warudo.Core.Attributes;
 using Warudo.Core.Plugins;
 
-[PluginType(Id = "com.barinzaya.oscinput", Name = "OSC Input", Version = "0.2.5", Author = "Barinzaya", Description = "Adds an On OSC Message node.",
-    NodeTypes = new[] { typeof(OscInputNode) })]
+[PluginType(Id = "party.liyin.osc", Name = "LIYIN_OSC_PLUGIN_NAME", Version = "0.2.6", Author = "Barinzaya & LiYin", Description = "LIYIN_OSC_PLUGIN_OSC_DESCRIPTION",
+    NodeTypes = new[] { typeof(OscInputNode), typeof(OscSendNode) })]
 public class OscInputPlugin : Plugin {
-    public const int OSC_SERVER_PORT = 19190;
+    [DataInput]
+    [Label("LIYIN_OSC_PLUGIN_OSC_SERVER_PORT")]
+    public int OSC_SERVER_PORT = 19190;
 
     private OscListener listener;
 
@@ -17,6 +19,10 @@ public class OscInputPlugin : Plugin {
 
     protected override void OnCreate() {
         base.OnCreate();
+        Watch(nameof(OSC_SERVER_PORT), () => {
+            listener.Dispose();
+            listener = new(OSC_SERVER_PORT);
+        });
         listener = new(OSC_SERVER_PORT);
     }
 

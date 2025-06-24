@@ -9,7 +9,7 @@ public class OscListener : IDisposable {
     private ConcurrentQueue<OscPacket> packets;
 
     public OscListener(int port) {
-        var endpoint = new IPEndPoint(IPAddress.Any, 19190);
+        var endpoint = new IPEndPoint(IPAddress.Any, port);
         client = new(endpoint);
         packets = new();
 

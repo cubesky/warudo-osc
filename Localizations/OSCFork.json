@@ -1,0 +1,14 @@
+{
+    "en": {
+      "LIYIN_OSC_PLUGIN_NAME": "OSC (LiYin Fork)",
+      "LIYIN_OSC_PLUGIN_OSC_DESCRIPTION": "OSC Fork is a plugin to receive and send Open Sound Control (OSC) messages. Forked from Barinzaya's OSC Input Plugin",
+      "LIYIN_OSC_PLUGIN_OSC_SERVER_PORT": "OSC Server Port",
+      "LIYIN_OSC_PLUGIN_OSC_NODE_ON_OSC_TITLE": "On OSC Message",
+      "LIYIN_OSC_PLUGIN_OSC_GATEGORY": "OSC",
+      "LIYIN_OSC_PLUGIN_OSC_ADDRESS": "OSC Address",
+      "LIYIN_OSC_PLUGIN_OSC_ARGUMENTS": "OSC Arguments",
+      "LIYIN_OSC_PLUGIN_OSC_NODE_SEND_OSC_HOST": "OSC Host",
+      "LIYIN_OSC_PLUGIN_OSC_NODE_SEND_OSC_PORT": "OSC Port",
+      "LIYIN_OSC_PLUGIN_OSC_NODE_SEND_OSC_TITLE": "Send OSC Message"
+    }
+}

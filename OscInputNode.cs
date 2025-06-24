@@ -4,16 +4,20 @@ using Warudo.Core.Attributes;
 using Warudo.Core.Data;
 using Warudo.Core.Graphs;
 
-[NodeType(Id = "com.barinzaya.oscinput.nodes.oscmessage", Title = "On OSC Message", Category = "External Integration")]
+[NodeType(Id = "party.liyin.osc.nodes.oscmessage", Title = "LIYIN_OSC_PLUGIN_OSC_NODE_ON_OSC_TITLE", Category = "LIYIN_OSC_PLUGIN_OSC_GATEGORY")]
 public class OscInputNode : Node {
     public new OscInputPlugin Plugin => base.Plugin as OscInputPlugin;
 
-    [DataInput] public string Address = "/value";
+    [DataInput]
+    [Label("LIYIN_OSC_PLUGIN_OSC_ADDRESS")]
+    public string Address = "/value";
 
-    [Label("Arguments")]
-    [DataInput] public OscInputType[] ArgumentTypes = new OscInputType[0];
+    [Label("LIYIN_OSC_PLUGIN_OSC_ARGUMENTS")]
+    [DataInput] 
+    public OscInputType[] ArgumentTypes = new OscInputType[0];
 
-    [FlowOutput] public Continuation Exit;
+    [FlowOutput] 
+    public Continuation Exit;
 
     private object[] values;
 
